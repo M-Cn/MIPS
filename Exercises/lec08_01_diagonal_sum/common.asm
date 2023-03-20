@@ -80,7 +80,7 @@ exit2:
 				syscall
 				jr	$ra
 
-print_lab_int:		#print_lab_int(int, string)
+print_lab_int:								#print_lab_int(int, string)
 				sw		$ra, ($sp)
 				subi		$sp, $sp, 4
 				sw		$a0, ($sp)

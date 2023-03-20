@@ -11,14 +11,14 @@ is_secondary_diag:						#is_secondary_diag(int x, int y, int size)
 			subi		$t0, $t0, 1		#t0 = N - 1
 			sub		$t0, $t0, $a0		#t0 = t0 - x
 			bne		$a1, $t0, false		#if	(y != N -1 - x) goto false
-			lw		$t0, ($sp)
+			lw		$t0, ($sp)			#restore t0
 			addi		$sp, $sp, 4
-			lw		$ra, ($sp)
+			lw		$ra, ($sp)			#restore ra
 			addi		$v0, $0, 1
-			jr		$ra
+			jr		$ra				#return true
 false:
-			lw		$t0, ($sp)
+			lw		$t0, ($sp)			#restore t0
 			addi		$sp, $sp, 4
-			lw		$ra, ($sp)
+			lw		$ra, ($sp)			#restore ra
 			addi		$v0, $0, 0
-			jr		$ra
+			jr		$ra				#return false
